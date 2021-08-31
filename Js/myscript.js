@@ -31,3 +31,85 @@ if(parola === true){
 
 console.log(parola);
 
+
+// L’utente sceglie pari o dispari e inserisce un numero da 1 a 5.
+
+var bottonPair = document.getElementById("but-pari");
+var bottonDispair = document.getElementById("but-dispari");
+
+bottonPair.addEventListener('click',
+    function(){
+        let numeroScelto = parseInt(prompt("Inserisci numero da 1 a 5"));
+
+        // controllo se il numero scelto è tra 1 e 5
+        if((numeroScelto>0) && (numeroScelto<6)){
+
+            // creo numero randomico del computer
+            function numberRandom(min , max) {  
+                return Math.floor(Math.random() * (max - min) + 1);
+            }
+
+            let pcNumber = numberRandom(1 , 5); 
+            console.log("PC-Number: "+pcNumber);
+            // sommiamo i numeri
+            let somma = pcNumber + numeroScelto;
+            console.log("Somma: "+somma);
+            // funzione pari o dispari
+            function Pari(sommaFunction){
+                let pariFunction = sommaFunction % 2;
+                if(pariFunction == 0){
+                    return true;
+                }
+                return false;
+            }
+
+            if(Pari(somma)){
+                alert("Complimenti è pari hai vinto");
+            }else{
+                alert("Mi dispiace è dispari ritenta!!!");
+            }
+            
+        }else{
+            alert("Inserisci numero valido!!!")
+        }
+    }
+);
+
+bottonDispair.addEventListener('click',
+    function(){
+        let numeroScelto = parseInt(prompt("Inserisci numero da 1 a 5"));
+
+        // controllo se il numero scelto è tra 1 e 5
+        if((numeroScelto>0) && (numeroScelto<6)){
+
+            // creo numero randomico del computer
+            function numberRandom(min , max) {  
+                return Math.floor(Math.random() * (max - min) + 1);
+            }
+
+            let pcNumber = numberRandom(1 , 5); 
+            console.log("PC-Number: "+pcNumber);
+            // sommiamo i numeri
+            let somma = pcNumber + numeroScelto;
+            console.log("Somma: "+somma);
+            // funzione pari o dispari
+            function Pari(sommaFunction){
+                let pariFunction = sommaFunction % 2;
+                if(pariFunction == 0){
+                    return true;
+                }
+                return false;
+            }
+
+            if(Pari(somma)){
+                alert("Mi dispiace è Pari ritenta!!!");
+            }else{
+                alert("Complimenti è dispari hai vinto!");
+            }
+            
+        }else{
+            alert("Inserisci numero valido!!!")
+        }
+    }
+);
+
